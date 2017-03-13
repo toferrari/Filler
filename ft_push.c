@@ -6,7 +6,7 @@
 /*   By: tferrari <tferrari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/13 10:56:48 by tferrari          #+#    #+#             */
-/*   Updated: 2017/03/13 13:34:43 by tferrari         ###   ########.fr       */
+/*   Updated: 2017/03/13 14:27:39 by tferrari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,11 @@ static void		ft_new_taille(t_check *check, char c)
 		check->taille2++;
 	}
 }
-void			ft_swap_tab_r(int **tab, int *taille)
+void			ft_swap_tab_r(int **tab, int taille)
 {
 	int j;
 
-	j = (*taille);
+	j = taille;
 	while (j >= 0)
 	{
 		(*tab)[j + 1] = (*tab)[j];
@@ -37,14 +37,14 @@ void			ft_swap_tab_r(int **tab, int *taille)
 	}
 }
 
-void			ft_swap_tab_l(int **tab, int *taille)
+void			ft_swap_tab_l(int **tab, int taille)
 {
 	int j;
 
 	j = 0;
-	while (J < *taille)
+	while (j < taille)
 	{
-		*tab)[j] = (*tab)[j + 1];
+		(*tab)[j] = (*tab)[j + 1];
 		j++;
 	}
 }
@@ -56,17 +56,17 @@ void			ft_push(t_check *check, char c)
 	if (c == 'a' && check->taille2 > 0)
 	{
 		tmp = check->tab2[0];
-		ft_swap_tab_r(&check->tab1, &check->taille1);
+		ft_swap_tab_r(&check->tab1, check->taille1);
 		check->tab1[0] = tmp;
-		ft_swap_tab_l(&check->tab2, &check->taille2);
-		ft_new_taille_a(check);
+		ft_swap_tab_l(&check->tab2, check->taille2);
+		ft_new_taille(check, c);
 	}
-	else if (c == 'b' check->taille1 > 0)
+	else if (c == 'b' && check->taille1 > 0)
 	{
-		mp = check->tab1[0];
-		ft_swap_tab_r(&check->tab2, &check->taille2);
+		tmp = check->tab1[0];
+		ft_swap_tab_r(&check->tab2, check->taille2);
 		check->tab2[0] = tmp;
-		ft_swap_tab_l(&check->tab1, &check->taille1);
-		ft_new_taille(check);
+		ft_swap_tab_l(&check->tab1, check->taille1);
+		ft_new_taille(check, c);
 	}
 }

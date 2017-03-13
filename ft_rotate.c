@@ -6,7 +6,7 @@
 /*   By: tferrari <tferrari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/13 12:01:02 by tferrari          #+#    #+#             */
-/*   Updated: 2017/03/13 13:54:28 by tferrari         ###   ########.fr       */
+/*   Updated: 2017/03/13 15:04:57 by tferrari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,6 @@ void			ft_rotate(int **tab, int taille)
 	{
 		tmp = (*tab)[0];
 		ft_swap_tab_l(tab, taille);
-		tab[taille] = tmp;
+		(*tab)[taille - 1] = tmp;
 	}
 }

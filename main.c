@@ -6,7 +6,7 @@
 /*   By: tferrari <tferrari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/10 14:55:33 by tferrari          #+#    #+#             */
-/*   Updated: 2017/03/13 10:36:55 by tferrari         ###   ########.fr       */
+/*   Updated: 2017/03/13 15:11:05 by tferrari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,7 @@ int			main(int argc, char **argv)
 	t_check		check;
 	int			ret;
 	char		*order;
+	int i;
 
 	check.taille2 = 0;
 	if (ft_strcmp(checkin(argv, argc, &check), "OK") != 0 ||
@@ -79,8 +80,16 @@ int			main(int argc, char **argv)
 		return (ft_error("Error"));
 	while ((ret = get_next_line(0, &order)) == 1)
 	{
+		i = 0;
 		ft_checker(order, &check);
 		ft_memdel((void **)&order);
+		while (i < check.taille1)
+		{
+			ft_putnbr(check.tab1[i]);
+			ft_putchar(' ');
+			i++;
+		}
+		ft_putstrnbr("taille b =", check.taille2);
 	}
 	return (0);
 	//ft_checker(tab1, tab2, j, order);
