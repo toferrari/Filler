@@ -1,18 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sa.c                                            :+:      :+:    :+:   */
+/*   ft_swap2.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tferrari <tferrari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/11 15:43:19 by tferrari          #+#    #+#             */
-/*   Updated: 2017/03/11 15:43:52 by tferrari         ###   ########.fr       */
+/*   Created: 2017/03/13 10:32:13 by tferrari          #+#    #+#             */
+/*   Updated: 2017/03/13 13:48:20 by tferrari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-char		*ft_sa()
+void			ft_swap2(t_check *check)
 {
-	
+	int tmp;
+
+	if (check->taille1 > 0)
+		ft_swap(&check->tab1, check.taille1);
+	if (check->taille2 > 0)
+		ft_swap(&check->tab2, check.taille2);
 }

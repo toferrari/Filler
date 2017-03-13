@@ -1,19 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_checker.c                                       :+:      :+:    :+:   */
+/*   ft_rotate.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tferrari <tferrari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/10 16:42:21 by tferrari          #+#    #+#             */
-/*   Updated: 2017/03/13 10:59:21 by tferrari         ###   ########.fr       */
+/*   Created: 2017/03/13 12:01:02 by tferrari          #+#    #+#             */
+/*   Updated: 2017/03/13 13:54:28 by tferrari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
-#include "libft.h"
 
-void			ft_checker(char *order, t_check *check)
+void			ft_rotate(int **tab, int taille)
 {
-	ft_swap(&check->tab1, check->taille1);
+	int tmp;
+
+	if (taille > 1)
+	{
+		tmp = (*tab)[0];
+		ft_swap_tab_l(tab, taille);
+		tab[taille] = tmp;
+	}
 }
