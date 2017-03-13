@@ -6,7 +6,7 @@
 /*   By: tferrari <tferrari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/10 14:55:33 by tferrari          #+#    #+#             */
-/*   Updated: 2017/03/13 17:27:02 by tferrari         ###   ########.fr       */
+/*   Updated: 2017/03/13 19:12:50 by tferrari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,34 +17,7 @@
 int			ft_error(char *error)
 {
 	ft_putendl(error);
-	return(0);
-}
-
-static char	*checkin(char **argv, int ac, t_check *check)
-{
-	int		i;
-	int		j;
-
-	j = 1;
-	if (!(check->tab1 = ft_intmal(ac)) || !(check->tab2 = ft_intmal(ac)))
-		return ("Error");
-	while (j < ac)
-	{
-		i = 0;
-		while (argv[j][i])
-		{
-			if (!(ft_isdigit(argv[j][i])))
-			{
-				ft_memdel((void **)&check->tab1);
-				return ("Error");
-			}
-			i++;
-		}
-		check->tab1[j - 1] = ft_atoi(argv[j]);
-		j++;
-	}
-	check->taille1 = ac - 1;
-	return ("OK");
+	return (0);
 }
 
 static char	*checkdouble(t_check check)
@@ -74,7 +47,7 @@ int			main(int argc, char **argv)
 	char		*order;
 
 	check.taille2 = 0;
-	if (ft_strcmp(checkin(argv, argc, &check), "OK") != 0 ||
+	if (ft_strcmp(ft_check(argv, argc, &check), "OK") != 0 ||
 	ft_strcmp(checkdouble(check), "OK") != 0)
 		return (ft_error("Error"));
 	while ((ret = get_next_line(0, &order)) == 1)

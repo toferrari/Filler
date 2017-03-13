@@ -6,7 +6,7 @@
 /*   By: tferrari <tferrari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/13 10:56:48 by tferrari          #+#    #+#             */
-/*   Updated: 2017/03/13 14:27:39 by tferrari         ###   ########.fr       */
+/*   Updated: 2017/03/13 19:11:34 by tferrari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ static void		ft_new_taille(t_check *check, char c)
 		check->taille2++;
 	}
 }
+
 void			ft_swap_tab_r(int **tab, int taille)
 {
 	int j;

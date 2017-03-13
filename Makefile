@@ -6,7 +6,7 @@
 #    By: tferrari <tferrari@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/03/10 13:28:48 by tferrari          #+#    #+#              #
-#    Updated: 2017/03/13 16:45:12 by tferrari         ###   ########.fr        #
+#    Updated: 2017/03/13 18:46:16 by tferrari         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ NAME = checker
 SRC_DIR = src
 
 SRC_FILE =	main.c ft_checker.c ft_push.c ft_rotate_reverse.c ft_rotate.c \
-			ft_rotate_reverse2.c ft_rotate2.c ft_swap.c ft_swap2.c
+			ft_rotate_reverse2.c ft_rotate2.c ft_swap.c ft_swap2.c ft_check.c
 
 SRC = $(addprefix $(SRC_DIR)/, $(SRC_FILE))
 
