@@ -6,7 +6,7 @@
 /*   By: tferrari <tferrari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/11 15:44:15 by tferrari          #+#    #+#             */
-/*   Updated: 2017/03/13 14:45:35 by tferrari         ###   ########.fr       */
+/*   Updated: 2017/03/13 16:55:45 by tferrari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ typedef	struct	s_struct
 }				t_check;
 
 void			ft_checker(char *order, t_check *check);
+char			*ft_check_end(t_check check);
 void			ft_swap(int **tab, int taille);
 void			ft_swap2(t_check *check);
 void			ft_push(t_check *check, char c);
