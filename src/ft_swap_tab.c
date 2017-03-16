@@ -1,25 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_swap.c                                          :+:      :+:    :+:   */
+/*   ft_swap_tab.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tferrari <tferrari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/11 15:43:19 by tferrari          #+#    #+#             */
-/*   Updated: 2017/03/15 11:35:46 by tferrari         ###   ########.fr       */
+/*   Created: 2017/03/15 16:33:35 by tferrari          #+#    #+#             */
+/*   Updated: 2017/03/15 16:34:15 by tferrari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-void		ft_swap(int **tab, int taille)
+void			ft_swap_tab_r(int **tab, int taille)
 {
-	int tmp;
+	int j;
 
-	if (taille > 1)
+	j = taille - 1;
+	while (j >= 0)
 	{
-		tmp = (*tab)[0];
-		(*tab)[0] = (*tab)[1];
-		(*tab)[1] = tmp;
+		(*tab)[j + 1] = (*tab)[j];
+		j--;
+	}
+}
+
+void			ft_swap_tab_l(int **tab, int taille)
+{
+	int j;
+
+	j = 0;
+	while (j < taille)
+	{
+		(*tab)[j] = (*tab)[j + 1];
+		j++;
 	}
 }

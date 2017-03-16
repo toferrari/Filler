@@ -4,3 +4,5 @@ libft.a
 .DS_Store
 ._*
 checker
+obj_p/
+obj_c/

@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_swap.c                                          :+:      :+:    :+:   */
+/*   main_push.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tferrari <tferrari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/11 15:43:19 by tferrari          #+#    #+#             */
-/*   Updated: 2017/03/15 11:35:46 by tferrari         ###   ########.fr       */
+/*   Created: 2017/03/14 16:48:49 by tferrari          #+#    #+#             */
+/*   Updated: 2017/03/15 20:19:58 by tferrari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker.h"
+#include "libft.h"
+#include "push_swap.h"
 
-void		ft_swap(int **tab, int taille)
+int			ft_error(char *error)
 {
-	int tmp;
+	ft_putendl(error);
+	return (0);
+}
 
-	if (taille > 1)
-	{
-		tmp = (*tab)[0];
-		(*tab)[0] = (*tab)[1];
-		(*tab)[1] = tmp;
-	}
+int				main(int argc, char **argv)
+{
+	t_check	check;
+
+	if (ft_strcmp(ft_check(argv, argc, &check), "OK") != 0)
+		return (ft_error("Error"));
+	ft_push_swap(&check);
+	return (0);
 }

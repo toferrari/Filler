@@ -6,52 +6,78 @@
 #    By: tferrari <tferrari@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/03/10 13:28:48 by tferrari          #+#    #+#              #
-#    Updated: 2017/03/13 18:46:16 by tferrari         ###   ########.fr        #
+#    Updated: 2017/03/15 19:37:38 by tferrari         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 .PHONY: libft
 
-NAME = checker
+NAME_C = checker
+
+NAME_P = push_swap
 
 SRC_DIR = src
 
-SRC_FILE =	main.c ft_checker.c ft_push.c ft_rotate_reverse.c ft_rotate.c \
-			ft_rotate_reverse2.c ft_rotate2.c ft_swap.c ft_swap2.c ft_check.c
+SRC_FILE_C =	main_checker.c ft_checker.c ft_push.c ft_rotate_reverse.c \
+				ft_rotate.c ft_rotate_reverse2.c ft_rotate2.c ft_swap.c \
+				ft_swap2.c ft_check.c ft_swap_tab.c
 
-SRC = $(addprefix $(SRC_DIR)/, $(SRC_FILE))
+SRC_FILE_P =	main_push.c ft_push.c ft_rotate_reverse.c ft_rotate.c \
+				ft_rotate_reverse2.c ft_rotate2.c ft_swap.c ft_swap2.c \
+				ft_check.c ft_push_swap.c ft_swap_tab.c
 
-OBJS_DIR = obj
+SRC_C = $(addprefix $(SRC_DIR)/, $(SRC_FILE_C))
 
-OBJS = $(addprefix $(OBJS_DIR)/, $(SRC_FILE:.c=.o))
+SRC_P = $(addprefix $(SRC_DIR)/, $(SRC_FILE_P))
+
+OBJS_DIR_C = obj_c
+
+OBJS_DIR_P = obj_p
+
+OBJS_C = $(addprefix $(OBJS_DIR_C)/, $(SRC_FILE_C:.c=.o))
+
+OBJS_P = $(addprefix $(OBJS_DIR_P)/, $(SRC_FILE_P:.c=.o))
 
 INC = -ILibft/include -IInclude/
 
 LFT = -L./Libft -lft
 
-all : $(NAME)
+all : libft $(NAME_C) $(NAME_P)
 
-$(NAME): libft $(OBJS)
-	@gcc $(LFT) -o $(NAME) $(OBJS)
-	@echo "checker OK"
+$(NAME_C): $(OBJS_C)
+	@gcc $(LFT) -o $(NAME_C) $(OBJS_C)
+	@echo "\033[32mchecker créé\033[0m"
+
+$(NAME_P): $(OBJS_P)
+	@gcc $(LFT) -o $(NAME_P) $(OBJS_P)
+	@echo "\033[32mpush_swap créé\033[0m"
 
 libft:
 	make -C Libft/
 
-$(OBJS_DIR)/%.o: $(SRC_DIR)/%.c
-	@mkdir -p $(OBJS_DIR)
+$(OBJS_DIR_P)/%.o: $(SRC_DIR)/%.c
+	@mkdir -p $(OBJS_DIR_P)
+	@gcc -Wall -Werror -Wextra $(INC) -o $@ -c $<
+	@echo "Fichier" $< "recompilé."
+
+$(OBJS_DIR_C)/%.o: $(SRC_DIR)/%.c
+	@mkdir -p $(OBJS_DIR_C)
 	@gcc -Wall -Werror -Wextra $(INC) -o $@ -c $<
 	@echo "Fichier" $< "recompilé."
 
 clean:
-	@rm -rf $(OBJS_DIR)
+	@rm -rf $(OBJS_DIR_C)
+	@rm -rf $(OBJS_DIR_P)
 	@make -C Libft clean
-	@echo "Fichier objet de checker supprimé"
+	@echo "\033[31mFichier objet de checker supprimé\033[0m"
+	@echo "\033[31mFichier objet de push_swap supprimé\033[0m"
 
 fclean: clean
-	@rm -f $(NAME)
+	@rm -f $(NAME_C)
+	@rm -f $(NAME_P)
 	@rm -f Libft/libft.a
-	@echo "Libft.a supprimé"
-	@echo "checker supprimé"
+	@echo "\033[31mLibft.a supprimé\033[0m"
+	@echo "\033[31mchecker supprimé\033[0m"
+	@echo "\033[31mpush_swap supprimé\033[0m"
 
 re: fclean all

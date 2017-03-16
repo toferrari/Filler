@@ -6,7 +6,7 @@
 /*   By: tferrari <tferrari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/10 16:42:21 by tferrari          #+#    #+#             */
-/*   Updated: 2017/03/13 19:09:18 by tferrari         ###   ########.fr       */
+/*   Updated: 2017/03/15 17:04:59 by tferrari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ char			*ft_check_end(t_check check)
 	return ("\nOK");
 }
 
+
+
 void			ft_checker(char *order, t_check *check)
 {
 	if (ft_strcmp(order, "sa") == 0)
@@ -41,10 +43,14 @@ void			ft_checker(char *order, t_check *check)
 		ft_push(check, 'a');
 	else if (ft_strcmp(order, "ra") == 0)
 		ft_rotate(&check->tab1, check->taille1);
+	else if (ft_strcmp(order, "rb") == 0)
+		ft_rotate(&check->tab2, check->taille2);
 	else if (ft_strcmp(order, "rr") == 0)
 		ft_rotate2(check);
 	else if (ft_strcmp(order, "rra") == 0)
 		ft_rotate_reverse(&check->tab1, check->taille1);
+	else if (ft_strcmp(order, "rrb") == 0)
+		ft_rotate_reverse(&check->tab2, check->taille2);
 	else if (ft_strcmp(order, "rrr") == 0)
 		ft_rotate_reverse2(check);
 }
