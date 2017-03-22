@@ -6,7 +6,7 @@
 #    By: tferrari <tferrari@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/03/12 18:19:54 by tferrari          #+#    #+#              #
-#    Updated: 2017/03/12 19:24:29 by tferrari         ###   ########.fr        #
+#    Updated: 2017/03/22 13:47:32 by tferrari         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,7 @@ SRC_FILE =	ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c \
 			ft_strcat_p.c ft_realloc_adr_p.c ft_intlen_base.c ft_itoa_base.c \
 			ft_intlen_base64.c ft_itoa_base64.c ft_strupper.c ft_wchar_len.c \
 			ft_wchrcat.c ft_strccat_p.c ft_strcpy_p.c ft_wstr_len.c \
-			ft_intmal.c get_next_line.c
+			ft_intmal.c get_next_line.c ft_swap.c
 
 SRC = $(addprefix $(SRC_DIR)/, $(SRC_FILE))
 

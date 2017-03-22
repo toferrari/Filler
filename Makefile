@@ -6,7 +6,7 @@
 #    By: tferrari <tferrari@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/03/10 13:28:48 by tferrari          #+#    #+#              #
-#    Updated: 2017/03/15 19:37:38 by tferrari         ###   ########.fr        #
+#    Updated: 2017/03/22 18:29:32 by tferrari         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,12 +19,13 @@ NAME_P = push_swap
 SRC_DIR = src
 
 SRC_FILE_C =	main_checker.c ft_checker.c ft_push.c ft_rotate_reverse.c \
-				ft_rotate.c ft_rotate_reverse2.c ft_rotate2.c ft_swap.c \
+				ft_rotate.c ft_rotate_reverse2.c ft_rotate2.c ft_swap1.c \
 				ft_swap2.c ft_check.c ft_swap_tab.c
 
 SRC_FILE_P =	main_push.c ft_push.c ft_rotate_reverse.c ft_rotate.c \
-				ft_rotate_reverse2.c ft_rotate2.c ft_swap.c ft_swap2.c \
-				ft_check.c ft_push_swap.c ft_swap_tab.c
+				ft_rotate_reverse2.c ft_rotate2.c ft_swap1.c ft_swap2.c \
+				ft_check.c ft_push_swap.c ft_swap_tab.c ft_checker.c \
+				ft_write_order.c
 
 SRC_C = $(addprefix $(SRC_DIR)/, $(SRC_FILE_C))
 

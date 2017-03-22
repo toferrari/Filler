@@ -6,7 +6,7 @@
 /*   By: tferrari <tferrari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/02 19:37:12 by tferrari          #+#    #+#             */
-/*   Updated: 2017/03/10 17:26:59 by tferrari         ###   ########.fr       */
+/*   Updated: 2017/03/22 13:47:48 by tferrari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,5 +113,6 @@ char			*ft_strccat_p(char *dest, char *src, char c, int start);
 char			*ft_strcpy_p(char *dst, const char *src, int len);
 int				ft_wstr_len(wchar_t *str);
 int				*ft_intmal(int len);
+void			ft_swap(int *b, int *a);
 
 #endif

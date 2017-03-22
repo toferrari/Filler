@@ -6,7 +6,7 @@
 /*   By: tferrari <tferrari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/10 16:42:21 by tferrari          #+#    #+#             */
-/*   Updated: 2017/03/15 17:04:59 by tferrari         ###   ########.fr       */
+/*   Updated: 2017/03/22 22:02:47 by tferrari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,9 @@ char			*ft_check_end(t_check check)
 void			ft_checker(char *order, t_check *check)
 {
 	if (ft_strcmp(order, "sa") == 0)
-		ft_swap(&check->tab1, check->taille1);
+		ft_swap1(&check->tab1, check->taille1);
+	else if (ft_strcmp(order, "sb") == 0)
+		ft_swap1(&check->tab2, check->taille2);
 	else if (ft_strcmp(order, "ss") == 0)
 		ft_swap2(check);
 	else if (ft_strcmp(order, "pb") == 0)

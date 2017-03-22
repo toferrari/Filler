@@ -6,7 +6,7 @@
 /*   By: tferrari <tferrari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/14 16:51:08 by tferrari          #+#    #+#             */
-/*   Updated: 2017/03/15 13:10:23 by tferrari         ###   ########.fr       */
+/*   Updated: 2017/03/22 18:34:13 by tferrari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,12 @@ typedef	struct	s_struct
 	int			taille1;
 	int			*tab2;
 	int			taille2;
+	int			count;
+	char		*str;
 }				t_check;
 
-void			ft_push_swap(t_check *check);
-void			ft_swap(int **tab, int taille);
+void			ft_sort_a(t_check *check, int len);
+void			ft_swap1(int **tab, int taille);
 void			ft_swap2(t_check *check);
 void			ft_push(t_check *check, char c);
 void			ft_swap_tab_r(int **tab, int taille);
@@ -32,5 +34,7 @@ void			ft_rotate2(t_check *check);
 void			ft_rotate_reverse(int **tab, int taille);
 void			ft_rotate_reverse2(t_check *check);
 char			*ft_check(char **argv, int ac, t_check *check);
+void			ft_write_order(t_check *check, char *order);
+void			ft_checker(char *order, t_check *check);
 
 #endif

@@ -1,21 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_swap2.c                                         :+:      :+:    :+:   */
+/*   ft_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tferrari <tferrari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/13 10:32:13 by tferrari          #+#    #+#             */
-/*   Updated: 2017/03/22 13:28:37 by tferrari         ###   ########.fr       */
+/*   Created: 2017/03/22 13:43:40 by tferrari          #+#    #+#             */
+/*   Updated: 2017/03/22 13:46:24 by tferrari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker.h"
+#include "libft.h"
 
-void			ft_swap2(t_check *check)
+void			ft_swap(int *b, int *a)
 {
-	if (check->taille1 > 1)
-		ft_swap1(&check->tab1, check->taille1);
-	if (check->taille2 > 1)
-		ft_swap1(&check->tab2, check->taille2);
+	int	tmp;
+
+	tmp = *b;
+	*b = *a;
+	*a = tmp;
 }
