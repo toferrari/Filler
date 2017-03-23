@@ -6,7 +6,7 @@
 /*   By: tferrari <tferrari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/14 16:48:49 by tferrari          #+#    #+#             */
-/*   Updated: 2017/03/22 22:41:49 by tferrari         ###   ########.fr       */
+/*   Updated: 2017/03/23 16:46:19 by tferrari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ int				main(int argc, char **argv)
 	if (ft_strcmp(ft_check(argv, argc, &check), "OK") != 0)
 		return (ft_error("Error"));
 	check.count = 0;
-	ft_print(&check);
+	check.tri = 0;
 	ft_sort_a(&check, check.taille1);
 	ft_print(&check);
 	ft_putstrnbr("count = ", check.count);

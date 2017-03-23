@@ -6,7 +6,7 @@
 /*   By: tferrari <tferrari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/15 10:47:17 by tferrari          #+#    #+#             */
-/*   Updated: 2017/03/22 22:33:24 by tferrari         ###   ########.fr       */
+/*   Updated: 2017/03/23 18:10:31 by tferrari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,14 +51,16 @@ static void		ft_push_swap(t_check *check, int len)
 	int	mediane;
 	int	i;
 	int	count;
+	int	pb;
 
 	mediane = ft_mediane(check->tab1, len);
 	i = 0;
+	pb = 0;
 	count = 0;
-	while (i < len)
+	while (i < len && pb < len / 2)
 	{
 		if (check->tab1[0] < mediane)
-			ft_write_order(check, "pb");
+			{ft_write_order(check, "pb");pb++;}
 		else
 		{
 			ft_write_order(check, "ra");
@@ -66,18 +68,23 @@ static void		ft_push_swap(t_check *check, int len)
 		}
 		i++;
 	}
-	while (0 < count)
+	while (0 < count && check->tri == 1)
 	{
 		ft_write_order(check, "rra");
 		count--;
 	}
+	check->tri = 1;
 }
 
 static void		ft_sort_b(t_check *check, int len)
 {
-	int i;
+	int	i;
+	int	mediane;
+	int	count;
 
 	i = 0;
+	count = 0;
+	mediane = ft_mediane(check->tab2, check->taille2);
 	if (len <= 2)
 	{
 		if (TAB2[0] < TAB2[1] && len == 2)
@@ -90,7 +97,13 @@ static void		ft_sort_b(t_check *check, int len)
 	{
 		while (i < len)
 		{
-			ft_write_order(check, "pa");
+			//if (check->tab2[0] >= mediane)
+			{
+				ft_write_order(check, "pa");
+				count++;
+			}
+		//	else
+		//		ft_write_order(check, "rb");
 			i++;
 		}
 		ft_sort_a(check, len);
@@ -99,6 +112,9 @@ static void		ft_sort_b(t_check *check, int len)
 
 void			ft_sort_a(t_check *check, int len)
 {
+	ft_putstr("je tri la pile a avec ");
+	ft_putnbr(len);
+	ft_putendl(" elements");
 	if (len == 2 && TAB1[0] > TAB1[1])
 		ft_write_order(check, "sa");
 	else if (len > 2)
