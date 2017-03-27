@@ -6,7 +6,7 @@
 /*   By: tferrari <tferrari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/15 10:47:17 by tferrari          #+#    #+#             */
-/*   Updated: 2017/03/23 18:10:31 by tferrari         ###   ########.fr       */
+/*   Updated: 2017/03/27 16:51:01 by tferrari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,33 +20,34 @@
 
 static int		ft_mediane(int *tab, int len)
 {
-	int *tmp;
-	int i;
+	int	up;
+	int	down;
+	int	i;
+	int	j;
 
 	i = 0;
-	if (!(tmp = ft_intmal(len)))
-		return (0);
 	while (i < len)
 	{
-		tmp[i] = tab[i];
-		i++;
-	}
-	i = 0;
-	while (i < len - 1)
-	{
-		if (tmp[i] > tmp[i + 1])
+		j = 0;
+		down = 0;
+		up = 0;
+		while (j < len)
 		{
-			ft_swap(&tmp[i], &tmp[i + 1]);
-			i = -1;
+			if (tab[j] > tab [i])
+				up++;
+			else if (tab[j] < tab [i])
+				down++;
+			j++;
 		}
+		if (up == down || up + 1 == down)
+			return (tab[i]);
 		i++;
 	}
-	i = tmp[len / 2];
-	//ft_memdel((void **)tmp);
-	return (i);
+	return (0);
 }
 
-static void		ft_push_swap(t_check *check, int len)
+
+static void		ft_push_b(t_check *check, int len)
 {
 	int	mediane;
 	int	i;
@@ -59,13 +60,10 @@ static void		ft_push_swap(t_check *check, int len)
 	count = 0;
 	while (i < len && pb < len / 2)
 	{
-		if (check->tab1[0] < mediane)
-			{ft_write_order(check, "pb");pb++;}
-		else
-		{
+		if (check->tab1[0] < mediane && ++pb)
+			ft_write_order(check, "pb");
+		else if (++count)
 			ft_write_order(check, "ra");
-			count++;
-		}
 		i++;
 	}
 	while (0 < count && check->tri == 1)
@@ -73,53 +71,56 @@ static void		ft_push_swap(t_check *check, int len)
 		ft_write_order(check, "rra");
 		count--;
 	}
-	check->tri = 1;
 }
 
-static void		ft_sort_b(t_check *check, int len)
+void			ft_push_a(t_check *check, int len)
 {
 	int	i;
 	int	mediane;
 	int	count;
 
-	i = 0;
 	count = 0;
+	i = 0;
 	mediane = ft_mediane(check->tab2, check->taille2);
+	while (i < len && count != TAI2)
+	{
+		if (check->tab2[0] >= mediane)
+		{
+			ft_write_order(check, "pa");
+			count++;
+		}
+		else
+			ft_write_order(check, "rb");
+		i++;
+	}
+	ft_sort_a(check, count);
+	if (len / 2 == TAI2)
+		ft_sort_b(check, len - count);
+}
+
+void			ft_sort_b(t_check *check, int len)
+{
+	check->tri = 1;
 	if (len <= 2)
 	{
-		if (TAB2[0] < TAB2[1] && len == 2)
+		if (TAB2[0] < TAB2[1] && len == 2 && check->taille2 > 0)
 			ft_write_order(check, "sb");
 		if (len == 2)
 			ft_write_order(check, "pa");
 		ft_write_order(check, "pa");
 	}
 	else
-	{
-		while (i < len)
-		{
-			//if (check->tab2[0] >= mediane)
-			{
-				ft_write_order(check, "pa");
-				count++;
-			}
-		//	else
-		//		ft_write_order(check, "rb");
-			i++;
-		}
-		ft_sort_a(check, len);
-	}
+		ft_push_a(check, len);
 }
+
 
 void			ft_sort_a(t_check *check, int len)
 {
-	ft_putstr("je tri la pile a avec ");
-	ft_putnbr(len);
-	ft_putendl(" elements");
 	if (len == 2 && TAB1[0] > TAB1[1])
 		ft_write_order(check, "sa");
 	else if (len > 2)
 	{
-		ft_push_swap(check, len);
+		ft_push_b(check, len);
 		ft_sort_a(check, len / 2 + len % 2);
 		ft_sort_b(check, len / 2);
 	}

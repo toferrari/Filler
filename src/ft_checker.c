@@ -6,7 +6,7 @@
 /*   By: tferrari <tferrari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/10 16:42:21 by tferrari          #+#    #+#             */
-/*   Updated: 2017/03/22 22:02:47 by tferrari         ###   ########.fr       */
+/*   Updated: 2017/03/27 16:12:25 by tferrari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,28 @@ char			*ft_check_end(t_check check)
 
 	i = 0;
 	if (check.taille2 > 0)
-		return ("\nKO");
+		return ("KO");
 	while (i < check.taille1 - 1)
 	{
 		if (check.tab1[i] > check.tab1[i + 1])
-			return ("\nKO");
+			return ("KO");
 		i++;
 	}
-	return ("\nOK");
+	return ("OK");
+}
+
+int			ft_check_tab(int *tab, int size)
+{
+	int i;
+
+	i = 0;
+	while (i < size - 1)
+	{
+		if (tab[i] > tab[i + 1])
+			return (0);
+		i++;
+	}
+	return (1);
 }
 
 

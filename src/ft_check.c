@@ -6,7 +6,7 @@
 /*   By: tferrari <tferrari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/13 18:27:29 by tferrari          #+#    #+#             */
-/*   Updated: 2017/03/15 20:21:23 by tferrari         ###   ########.fr       */
+/*   Updated: 2017/03/27 16:26:34 by tferrari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ static void		ft_init_tab(char **argv, int ac, t_check *check)
 		{
 			while (argv[j][i] && argv[j][i] == ' ')
 				i++;
-			if ((ft_isdigit(argv[j][i])))
+			if (ft_isdigit(argv[j][i]) || (argv[j][i] == '-' && ft_isdigit(argv[j][i + 1])))
 			{
 				check->tab1[check->count] = ft_atoi(&argv[j][i]);
 				i += ft_intlen(check->tab1[check->count]);

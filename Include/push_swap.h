@@ -6,7 +6,7 @@
 /*   By: tferrari <tferrari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/14 16:51:08 by tferrari          #+#    #+#             */
-/*   Updated: 2017/03/23 16:56:18 by tferrari         ###   ########.fr       */
+/*   Updated: 2017/03/27 15:51:45 by tferrari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,9 @@ char			*ft_check(char **argv, int ac, t_check *check);
 void			ft_write_order(t_check *check, char *order);
 void			ft_checker(char *order, t_check *check);
 char			*ft_check_end(t_check check);
+int				ft_check_tab(int *tab, int size);
+void			ft_push_a(t_check *check, int len);
+void			ft_sort_b(t_check *check, int len);
+void			ft_print(t_check *check);
 
 #endif

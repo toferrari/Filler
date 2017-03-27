@@ -6,7 +6,7 @@
 /*   By: tferrari <tferrari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/14 16:48:49 by tferrari          #+#    #+#             */
-/*   Updated: 2017/03/23 16:46:19 by tferrari         ###   ########.fr       */
+/*   Updated: 2017/03/27 16:53:37 by tferrari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,34 +24,6 @@ int			ft_error(char *error)
 	return (0);
 }
 
-static void			ft_print(t_check *check)
-{
-	int i;
-
-	i = 0;
-	ft_putstr("line a :");
-	while (i < TAI1)
-	{
-		ft_putnbr(TAB1[i]);
-		ft_putchar(' ');
-		i++;
-	}
-	ft_putchar('\n');
-	ft_putstr("line b :");
-	if (TAI2 > 0)
-	{
-		i = 0;
-		while (i < TAI2)
-		{
-			ft_putnbr(TAB2[i]);
-			ft_putchar(' ');
-			i++;
-		}
-	}
-	ft_putchar('\n');
-	ft_putchar('\n');
-}
-
 int				main(int argc, char **argv)
 {
 	t_check	check;
@@ -61,8 +33,5 @@ int				main(int argc, char **argv)
 	check.count = 0;
 	check.tri = 0;
 	ft_sort_a(&check, check.taille1);
-	ft_print(&check);
-	ft_putstrnbr("count = ", check.count);
-	//ft_putstr(check.str);
 	return (0);
 }

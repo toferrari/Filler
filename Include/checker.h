@@ -6,7 +6,7 @@
 /*   By: tferrari <tferrari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/11 15:44:15 by tferrari          #+#    #+#             */
-/*   Updated: 2017/03/22 18:30:34 by tferrari         ###   ########.fr       */
+/*   Updated: 2017/03/27 15:51:51 by tferrari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,6 @@ void			ft_rotate2(t_check *check);
 void			ft_rotate_reverse(int **tab, int taille);
 void			ft_rotate_reverse2(t_check *check);
 char			*ft_check(char **argv, int ac, t_check *check);
+void			ft_print(t_check *check);
 
 #endif
