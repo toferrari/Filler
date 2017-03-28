@@ -6,7 +6,7 @@
 /*   By: tferrari <tferrari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/15 10:47:17 by tferrari          #+#    #+#             */
-/*   Updated: 2017/03/27 16:51:01 by tferrari         ###   ########.fr       */
+/*   Updated: 2017/03/28 14:42:16 by tferrari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,9 @@ static int		ft_mediane(int *tab, int len)
 		up = 0;
 		while (j < len)
 		{
-			if (tab[j] > tab [i])
+			if (tab[j] > tab[i])
 				up++;
-			else if (tab[j] < tab [i])
+			else if (tab[j] < tab[i])
 				down++;
 			j++;
 		}
@@ -45,7 +45,6 @@ static int		ft_mediane(int *tab, int len)
 	}
 	return (0);
 }
-
 
 static void		ft_push_b(t_check *check, int len)
 {
@@ -112,7 +111,6 @@ void			ft_sort_b(t_check *check, int len)
 	else
 		ft_push_a(check, len);
 }
-
 
 void			ft_sort_a(t_check *check, int len)
 {

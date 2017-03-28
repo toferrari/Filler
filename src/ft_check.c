@@ -6,7 +6,7 @@
 /*   By: tferrari <tferrari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/13 18:27:29 by tferrari          #+#    #+#             */
-/*   Updated: 2017/03/27 16:26:34 by tferrari         ###   ########.fr       */
+/*   Updated: 2017/03/28 13:39:08 by tferrari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,16 +19,17 @@ static char		*ft_check_in(char **argv, int ac, t_check *check)
 	int		j;
 	int		tmp;
 
-	j = 1;
+	j = 0;
 	check->count = 0;
-	while (j < ac)
+	while (++j < ac)
 	{
 		i = 0;
 		while (argv[j][i])
 		{
 			while (argv[j][i] && argv[j][i] == ' ')
 				i++;
-			if (ft_isdigit(argv[j][i]) || (argv[j][i] == '-' && ft_isdigit(argv[j][i + 1])))
+			if (ft_isdigit(argv[j][i]) || (argv[j][i] == '-' &&
+			ft_isdigit(argv[j][i + 1])))
 			{
 				tmp = ft_atoi(&argv[j][i]);
 				i += ft_intlen(tmp);
@@ -37,7 +38,6 @@ static char		*ft_check_in(char **argv, int ac, t_check *check)
 			else if (argv[j][i])
 				return ("Error");
 		}
-		j++;
 	}
 	return ("OK");
 }
@@ -56,7 +56,8 @@ static void		ft_init_tab(char **argv, int ac, t_check *check)
 		{
 			while (argv[j][i] && argv[j][i] == ' ')
 				i++;
-			if (ft_isdigit(argv[j][i]) || (argv[j][i] == '-' && ft_isdigit(argv[j][i + 1])))
+			if (ft_isdigit(argv[j][i]) || (argv[j][i] == '-' &&
+			ft_isdigit(argv[j][i + 1])))
 			{
 				check->tab1[check->count] = ft_atoi(&argv[j][i]);
 				i += ft_intlen(check->tab1[check->count]);

@@ -6,7 +6,7 @@
 /*   By: tferrari <tferrari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/10 16:42:21 by tferrari          #+#    #+#             */
-/*   Updated: 2017/03/27 16:12:25 by tferrari         ###   ########.fr       */
+/*   Updated: 2017/03/28 14:11:39 by tferrari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ char			*ft_check_end(t_check check)
 	return ("OK");
 }
 
-int			ft_check_tab(int *tab, int size)
+int				ft_check_tab(int *tab, int size)
 {
 	int i;
 
@@ -43,30 +43,28 @@ int			ft_check_tab(int *tab, int size)
 	return (1);
 }
 
-
-
 void			ft_checker(char *order, t_check *check)
 {
-	if (ft_strcmp(order, "sa") == 0)
+	if (ft_strequ(order, "sa"))
 		ft_swap1(&check->tab1, check->taille1);
-	else if (ft_strcmp(order, "sb") == 0)
+	else if (ft_strequ(order, "sb"))
 		ft_swap1(&check->tab2, check->taille2);
-	else if (ft_strcmp(order, "ss") == 0)
+	else if (ft_strequ(order, "ss"))
 		ft_swap2(check);
-	else if (ft_strcmp(order, "pb") == 0)
+	else if (ft_strequ(order, "pb"))
 		ft_push(check, 'b');
-	else if (ft_strcmp(order, "pa") == 0)
+	else if (ft_strequ(order, "pa"))
 		ft_push(check, 'a');
-	else if (ft_strcmp(order, "ra") == 0)
+	else if (ft_strequ(order, "ra"))
 		ft_rotate(&check->tab1, check->taille1);
-	else if (ft_strcmp(order, "rb") == 0)
+	else if (ft_strequ(order, "rb"))
 		ft_rotate(&check->tab2, check->taille2);
-	else if (ft_strcmp(order, "rr") == 0)
+	else if (ft_strequ(order, "rr"))
 		ft_rotate2(check);
-	else if (ft_strcmp(order, "rra") == 0)
+	else if (ft_strequ(order, "rra"))
 		ft_rotate_reverse(&check->tab1, check->taille1);
-	else if (ft_strcmp(order, "rrb") == 0)
+	else if (ft_strequ(order, "rrb"))
 		ft_rotate_reverse(&check->tab2, check->taille2);
-	else if (ft_strcmp(order, "rrr") == 0)
+	else if (ft_strequ(order, "rrr"))
 		ft_rotate_reverse2(check);
 }

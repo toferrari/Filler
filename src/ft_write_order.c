@@ -6,7 +6,7 @@
 /*   By: tferrari <tferrari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/17 20:18:33 by tferrari          #+#    #+#             */
-/*   Updated: 2017/03/27 16:11:35 by tferrari         ###   ########.fr       */
+/*   Updated: 2017/03/28 14:13:52 by tferrari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 
 void			ft_write_order(t_check *check, char *order)
 {
-	if (ft_strcmp (ft_check_end(*check), "OK") == 0)
+	if (ft_strcmp(ft_check_end(*check), "OK") == 0)
 		return ;
 	check->count++;
 	ft_putendl(order);

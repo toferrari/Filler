@@ -6,7 +6,7 @@
 /*   By: tferrari <tferrari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/10 14:55:33 by tferrari          #+#    #+#             */
-/*   Updated: 2017/03/27 16:27:02 by tferrari         ###   ########.fr       */
+/*   Updated: 2017/03/28 14:44:32 by tferrari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,17 @@
 #include "libft.h"
 #include "get_next_line.h"
 
-int			ft_error(char *error)
+#define TAB1 (check.tab1)
+#define TAB2 (check.tab2)
+#define TAI1 (check.taille1)
+#define TAI2 (check.taille2)
+
+static int	ft_error(char *error, t_check check)
 {
+	if (TAB1)
+		ft_memdel((void **)&TAB1);
+	if (TAB2)
+		ft_memdel((void **)&TAB2);
 	ft_putendl(error);
 	return (0);
 }
@@ -49,7 +58,7 @@ int			main(int argc, char **argv)
 	check.taille2 = 0;
 	if (ft_strcmp(ft_check(argv, argc, &check), "OK") != 0 ||
 	ft_strcmp(checkdouble(check), "OK") != 0)
-		return (ft_error("Error"));
+		return (ft_error("Error", check));
 	while ((ret = get_next_line(0, &order)) == 1)
 	{
 		ft_checker(order, &check);
@@ -57,5 +66,5 @@ int			main(int argc, char **argv)
 	}
 	if (order)
 		ft_memdel((void **)&order);
-	return (ft_error(ft_check_end(check)));
+	return (ft_error(ft_check_end(check), check));
 }
