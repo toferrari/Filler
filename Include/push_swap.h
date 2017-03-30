@@ -6,7 +6,7 @@
 /*   By: tferrari <tferrari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/14 16:51:08 by tferrari          #+#    #+#             */
-/*   Updated: 2017/03/27 15:51:45 by tferrari         ###   ########.fr       */
+/*   Updated: 2017/03/30 11:41:24 by tferrari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,5 +42,6 @@ int				ft_check_tab(int *tab, int size);
 void			ft_push_a(t_check *check, int len);
 void			ft_sort_b(t_check *check, int len);
 void			ft_print(t_check *check);
+void			ft_little_len(t_check *check);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: tferrari <tferrari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/10 16:42:21 by tferrari          #+#    #+#             */
-/*   Updated: 2017/03/28 14:11:39 by tferrari         ###   ########.fr       */
+/*   Updated: 2017/03/29 19:07:10 by tferrari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,4 +67,6 @@ void			ft_checker(char *order, t_check *check)
 		ft_rotate_reverse(&check->tab2, check->taille2);
 	else if (ft_strequ(order, "rrr"))
 		ft_rotate_reverse2(check);
+	else
+		order[0] = 0;
 }

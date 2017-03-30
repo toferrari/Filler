@@ -6,7 +6,7 @@
 /*   By: tferrari <tferrari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/14 16:48:49 by tferrari          #+#    #+#             */
-/*   Updated: 2017/03/28 14:44:12 by tferrari         ###   ########.fr       */
+/*   Updated: 2017/03/30 15:27:14 by tferrari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,10 @@ int				main(int argc, char **argv)
 		return (ft_error("Error"));
 	check.count = 0;
 	check.tri = 0;
-	ft_sort_a(&check, check.taille1);
+	if (TAI1 <= 5)
+		ft_little_len(&check);
+	else
+		ft_sort_a(&check, check.taille1);
 	if (TAB1)
 		ft_memdel((void **)&TAB1);
 	if (TAB2)

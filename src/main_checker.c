@@ -6,7 +6,7 @@
 /*   By: tferrari <tferrari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/10 14:55:33 by tferrari          #+#    #+#             */
-/*   Updated: 2017/03/28 14:44:32 by tferrari         ###   ########.fr       */
+/*   Updated: 2017/03/29 19:09:58 by tferrari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,12 +56,14 @@ int			main(int argc, char **argv)
 	char		*order;
 
 	check.taille2 = 0;
-	if (ft_strcmp(ft_check(argv, argc, &check), "OK") != 0 ||
+	if (argc == 1 || ft_strcmp(ft_check(argv, argc, &check), "OK") != 0 ||
 	ft_strcmp(checkdouble(check), "OK") != 0)
 		return (ft_error("Error", check));
 	while ((ret = get_next_line(0, &order)) == 1)
 	{
 		ft_checker(order, &check);
+		if (order[0] == 0)
+			return (ft_error("error", check));
 		ft_memdel((void **)&order);
 	}
 	if (order)
