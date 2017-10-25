@@ -6,7 +6,7 @@
 /*   By: tferrari <tferrari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/14 16:51:08 by tferrari          #+#    #+#             */
-/*   Updated: 2017/03/30 11:41:24 by tferrari         ###   ########.fr       */
+/*   Updated: 2017/04/12 16:41:14 by tferrari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ typedef	struct	s_struct
 	int			*tab2;
 	int			taille2;
 	int			count;
-	char		*str;
 	int			tri;
 }				t_check;
 

@@ -6,7 +6,7 @@
 /*   By: tferrari <tferrari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/30 11:20:20 by tferrari          #+#    #+#             */
-/*   Updated: 2017/03/30 14:39:03 by tferrari         ###   ########.fr       */
+/*   Updated: 2017/10/25 11:23:36 by tferrari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,9 @@ static void		ft_sort_five(t_check *check)
 
 void			ft_little_len(t_check *check)
 {
-	if (TAI1 <= 3)
+	if (TAI1 == 2 && TAB1[0] > TAB2[1])
+		ft_write_order(check, "ra");
+	else if (TAI1 == 3)
 		ft_sort_three(check);
 	else
 		ft_sort_five(check);
